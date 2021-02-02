@@ -3,12 +3,28 @@ const { Schema } = mongoose;
 
 
 const UserModel = new Schema({
-    firstname:String,
-    lastname:String,
-    email:String,
-    pass1:String,
-    pass2:String,
-    cash: Number
+    firstname:{
+       type: String,
+    },
+    lastname:
+    {
+        type:String
+    },
+    email:
+    {
+        type:String,
+        unique:true
+    },
+    password:
+    {
+        type:String
+    },
+    confirmPassword:{
+        type:String
+    },
+    cash:{
+        type:Number
+    } 
 });
 
 module.exports = mongoose.model('User', UserModel);
