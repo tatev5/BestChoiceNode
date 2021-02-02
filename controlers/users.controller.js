@@ -1,5 +1,5 @@
 const User = require('../models/users.model');
-const jwt = require('jsonwebtoken');
+
 class UserController {
     static async getAll(req, res) {
         const info = await User.find();
@@ -10,10 +10,7 @@ class UserController {
         let pass = req.query.password;
         if(login && pass){
             const info = await User.findOne({ name: login });
-            if(info && info.password === pass){
-                const token = jwt.sign({name: info.name, email: info.email}, "asdddd");
-                return res.send({token});
-            }
+          
         }
         return res.status(400).json({message: "Incorrect login or password"});
     }
