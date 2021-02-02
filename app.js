@@ -23,20 +23,10 @@ app.use('/users', usersRouter);
 app.use('/submit', usersRouter);
 
 
-app
-  .get('/signup', function (req, res) {
-        res.sendFile(path.join(__dirname + '/public/index.html'));
-        
-  });
 
-  app
-  .post('/users', function (req, res) {
-        res.render('account.html');
-        
-  });
-  app.get('/registration', function (req, res) {
-      return res.sendFile(path.join(__dirname + '/public/index.html'));
-   });
+
+  
+ 
 
 app.listen(5050);
 
