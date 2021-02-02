@@ -10,6 +10,7 @@ class UserController {
         let pass = req.query.password;
         if(login && pass){
             const info = await User.findOne({ email: login });
+             return res.json({message: "OKEY"});
         }
         return res.status(400).json({message: "Incorrect login or password"});
     }
