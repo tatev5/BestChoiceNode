@@ -12,9 +12,7 @@ static async getOne(req, res) {
         if(login && pass){
             const info = await User.findOne({ email: login });
             if(info && pass === info.password){
-                const readStream = fs.createReadStream('account.html');
-                res.writeHead(200, { 'content-type': "text/html" })
-                readStream.pipe(res)
+               return res.render('../public/account.html');
             }
         }
         return res.status(400).json({message: "Incorrect login or password"});
