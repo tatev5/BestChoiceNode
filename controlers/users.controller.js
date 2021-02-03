@@ -15,7 +15,8 @@ static async getOne(req, res) {
                return res.redirect("../account.html");
             }
         }
-        return res.status(400).json({message: "Incorrect login or password"});
+     //  return res.status(400).json({message: "Incorrect login or password"});
+          return res.redirect("../error.html");
     }
     static async create(req, res) {
        const { name, lastname, email, password} = req.body;
