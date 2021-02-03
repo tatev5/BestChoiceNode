@@ -5,12 +5,15 @@ class UserController {
         const info = await User.find();
         return info;
     }
-   static async getOne(req, res) {
+static async getOne(req, res) {
         let login = req.query.email;
         let pass = req.query.password;
-      if(info && pass === info.password){
-                  return res.sendFile('../public/account.html');
+        if(login && pass){
+            const info = await User.findOne({ email: login });
+            if(info && pass === info.password){
+                return res.sendFile('../public/account.html');
             }
+        }
         return res.status(400).json({message: "Incorrect login or password"});
     }
     static async create(req, res) {
