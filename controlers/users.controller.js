@@ -1,5 +1,6 @@
 const User = require('../models/users.model');
-
+const fs =require('fs');
+ 
 class UserController {
     static async getAll(req, res) {
         const info = await User.find();
@@ -11,7 +12,9 @@ static async getOne(req, res) {
         if(login && pass){
             const info = await User.findOne({ email: login });
             if(info && pass === info.password){
-                return res.sendFile('../public/account.html');
+                const readStream = fs.createReadStream('../public/account.html');
+                res.writeHead(200, { 'content-type': "text/html" })
+                readStream.pipe(res)
             }
         }
         return res.status(400).json({message: "Incorrect login or password"});
