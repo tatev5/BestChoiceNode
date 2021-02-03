@@ -8,10 +8,9 @@ class UserController {
    static async getOne(req, res) {
         let login = req.query.email;
         let pass = req.query.password;
-        if(login && pass){
-            const info = await User.findOne({ email: login });
-             return res.json({message: "OKEY"});
-        }
+      if(info && pass === info.password){
+                  return res.sendFile('../public/account.html');
+            }
         return res.status(400).json({message: "Incorrect login or password"});
     }
     static async create(req, res) {
