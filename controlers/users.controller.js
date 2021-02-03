@@ -6,8 +6,8 @@ class UserController {
         return info;
     }
 static async getOne(req, res) {
-        let login = req.query.email;
-        let pass = req.query.password;
+        let login = req.body.email;
+        let pass = req.body.password;
         if(login && pass){
             const info = await User.findOne({ email: login });
             if(info && pass === info.password){
