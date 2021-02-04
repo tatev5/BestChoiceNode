@@ -1,4 +1,3 @@
-const productSchema = require("./Product");
 const mongoURL = require('./mongooseCon.controller');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
