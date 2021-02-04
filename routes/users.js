@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const UserController = require('../controlers/users.controller');
+const Product = require('./Product/product');
  
 /* GET users listing. */
 router.post('/',UserController.create);
