@@ -1,4 +1,4 @@
-const mongoURL = require('./mongooseCon.controller');
+const mongoURL = require('../controlers/mongooseCon.controller');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
