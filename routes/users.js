@@ -9,4 +9,7 @@ router.post('/login', UserController.getOne);
 router.put('/:id', UserController.update);
 router.delete('/:id', UserController.remove);
 
+/* GET product listing. */
+router.get('/', Product.getOne);
+
 module.exports = router;
