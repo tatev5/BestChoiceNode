@@ -16,7 +16,7 @@ const productSchema = new Schema({
     brand:String,
     price: Number, 
     description:String,
-    featured: Boolean,
+    featured: Boolean
 
  });
 
