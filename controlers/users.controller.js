@@ -12,11 +12,11 @@ static async getOne(req, res) {
         if(login && pass){
             const info = await User.findOne({ email: login });
             if(info && pass === info.password){
-               return res.redirect("../account.html");
+                const token = jwt.sign({ email: info.email, name: info.name }, '123asdasd');
+                return res.json(token);
             }
         }
-     //  return res.status(400).json({message: "Incorrect login or password"});
-          return res.redirect("../error.html");
+        return res.status(400).json({message: "Incorrect login or password"});
     }
     static async create(req, res) {
        const { name, lastname, email, password} = req.body;
