@@ -4,7 +4,7 @@ const users = require("../models/users.model");
 
 async function authorizat (req, res, next) {
   try {
-    const token = req.headers.authorization;
+    const token = req.body.authorization;
     const decoded = jwt.verify(token, '123asdasd');
     console.log(decoded);
     const user = await users.findOne({email: decoded.email});
