@@ -14,7 +14,7 @@ static async getOne(req, res) {
             const info = await User.findOne({ email: login });
             if(info && pass === info.password){
                 const token = jwt.sign({ email: info.email, name: info.name }, '123asdasd');
-               return res.json({toke: token, message: okey });
+               return res.json({toke: token, message: 'okey' });
             }
         }
         return res.status(400).json({message: "Incorrect login or password"});
