@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const bodyParser=require("body-parser");
-const cors =require('cors');
+const cors =require('cors')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const connectMongoose = require("./config.js");
+const connectMongoose = require("./config");
 const authorization = require("./middlewares/authorizat");
-
+const cityRoutes = require('./routes/cityRoutes');
 
 
 
@@ -22,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/submit', cityRoutes);
 app.use(authorization);
 
 
