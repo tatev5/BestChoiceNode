@@ -4,7 +4,7 @@ const bodyParser=require("body-parser");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const connectMongoose = require("./controlers/mongooseCon.controller");
+const connectMongoose = require("./config.js");
 const authorization = require("./middlewares/authorizat");
 
 
