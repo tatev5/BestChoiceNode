@@ -1,6 +1,7 @@
 const User = require('../models/users.model');
 const fs =require('fs');
- 
+const jwt = require('jsonwebtoken'); 
+
 class UserController {
     static async getAll(req, res) {
         const info = await User.find();
