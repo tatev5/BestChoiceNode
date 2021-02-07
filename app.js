@@ -14,7 +14,7 @@ const authorization = require("./middlewares/authorizat");
 const app = express();
 
 //app.use(logger('dev'));
-
+app.use(cors());
 app.use(bodyParser.json()); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
