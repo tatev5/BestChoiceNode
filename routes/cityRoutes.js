@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const CitySchema = require('../model/cityModel');
+const CitySchema = require('../models/cityModel')
 const express = require('express');
 const router = express.Router();
 const app = express;
